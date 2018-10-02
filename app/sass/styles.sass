@@ -1,0 +1,263 @@
+@import "vars"
+
+/* ------------------------------------- 
+	Font face 
+	------------------------------------- */
+@import "fonts"
+
+/* ------------------------------------- 
+	Reset 
+	------------------------------------- */
+@import "reset"
+
+
+/* ------------------------------------- 
+	Common styles 
+	------------------------------------- */
+.container
+	width: 100%
+	padding-right: 15px
+	padding-left: 15px
+	margin-right: auto
+	margin-left: auto
+
+@media (min-width: 576px)
+	.container
+		max-width: 540px
+
+@media (min-width: 768px)
+	.container
+		max-width: 720px
+
+@media (min-width: 992px)
+	.container
+		max-width: 960px
+
+@media (min-width: 1200px)
+	.container
+		max-width: 1030px
+
+.row
+	display: flex
+	flex-wrap: wrap
+
+.col
+	position: relative
+	width: 100%
+	min-height: 1px
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.nowrap
+	white-space: nowrap
+
+.text-center
+	text-align: center
+
+
+
+
+
+
+
+/* ------------------------------------- 
+	header
+	------------------------------------- */
+.header
+	&-top
+		padding: 0.9375rem 0
+
+
+
+/* ------------------------------------- 
+	footer
+	------------------------------------- */
+.footer
+	padding: 1.8125rem 0
+	&-line
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+.copy
+	font-size: 14px
+	text-transform: uppercase
+	color: $text-color
+
+
+
+/* ------------------------------------- 
+	typical page
+	------------------------------------- */
+.typical-page
+	padding-top: 2.5rem
+	&__block
+		padding-top: 1.875rem
+
+.hero
+	min-height: 279px
+	margin-bottom: 42px
+	position: relative
+	background: url('../img/banner.jpg') no-repeat 50% 50%
+	background-size: cover
+	z-index: 1
+	display: flex
+	align-items: center
+	overflow: hidden
+	&-title
+		padding: 5%
+		font-size: 3.75rem
+		line-height: 1
+		font-weight: 900
+		text-transform: uppercase
+		color: #fff
+		// position: absolute
+		// left: 5%
+		// top: 50%
+		// z-index: 1
+		// transform: translateY(-50%)
+
+	// &-img
+	// 	position: relative
+	// 	background: $title-color
+	&::after
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background: linear-gradient(90deg, rgba(#000, .75), rgba(#000, .1))
+		z-index: -1
+
+
+
+h1
+	margin-bottom: 0.7em
+	font-size: 2.5rem // 40px
+h2
+	margin-bottom: 0.4em
+	font-size: 2.25rem // 36px
+h3
+	font-size: 1.875rem // 30px
+h4
+	margin-bottom: 0.7em
+	font-size: 1.5rem // 24px
+h5
+	margin-bottom: 1em
+	font-size: 1.125rem // 18px
+h6
+	margin-bottom: 1em
+	font-size: 1rem
+
+p
+	font-size: 0.875rem
+	line-height: 1.25
+	color: $text-color
+	&.last
+		margin-bottom: 2em
+
+a
+	text-decoration: underline
+	&:link
+		color: $text-color
+	&:visited
+		color: #e86d6d
+	&:hover
+		color: $accent-color
+		text-decoration: none
+		transition: all .1s
+	&:active
+		color: #007bff
+
+.note
+	margin-top: -0.6em
+	padding: .4em 0 .4em 1em
+	font-size: 1rem
+	border-left: 3px solid $accent-color
+
+
+
+ul, ol
+	margin: 0
+	padding-left: 1rem
+	font-size: 0.875rem
+	line-height: 1.25
+	color: $text-color
+	li
+		margin-bottom: 1.1em
+ul
+	list-style: none
+	li:not(.sublist)
+		&::before
+			content: '\2014'
+			padding-right: .2em
+ol
+	list-style-position: inside
+	padding-left: 0
+
+
+
+.js-foldable__title
+	display: inline-block
+	position: relative
+	padding-right: 20px
+	cursor: pointer
+	&::before
+		content: ''
+		display: block
+		border: 5px solid transparent
+		border-top: 5px solid #9147a5
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-25%)
+		transform-origin: 50% 50%
+		z-index: 0
+		transition: transform .2s
+	&.opened::before
+		transform: translateY(-50%) rotate(180deg)
+		transition: transform .2s
+
+
+
+.img-block
+	display: flex
+	align-items: center
+	margin-bottom: 30px
+	&__img
+		display: flex
+		flex: 0 0 479px
+		max-width: 479px
+		align-items: center
+		justify-content: center
+		overflow: hidden
+	&.img-right
+		.img-block__img
+			margin-left: 40px
+	&.img-left
+		.img-block__img
+			margin-right: 40px
+		.img-block__text
+			order: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------- 
+	Media styles 
+	------------------------------------- */
+@import "media"
